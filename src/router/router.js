@@ -33,7 +33,7 @@ const routes = [
      {
          path: '/client/:id',
          name:'client',
-         component: ()=>import(/*webpackChunkName:"ClientLayout"*/'../components/client/Layout/ClientLayout.vue'),
+         component: ()=>import('../components/client/Layout/ClientLayout.vue'),
             children:[
                 {
                 path:'',
@@ -42,22 +42,22 @@ const routes = [
                {
                   path:'myappliance',
                   name:'myappliance',
-                  component: ()=>import(/*webpackChunkName:"MyAppliance"*/'../views/Client/client-my-appliance.vue'),
+                  component: ()=>import('../views/Client/client-my-appliance.vue'),
                },
                {
                   path:'myplan',
                   name:'myplan',
-                  component: ()=>import(/*webpackChunkName:"MyPlan"*/'../views/Client/client-my-plan.vue')
+                  component: ()=>import('../views/Client/client-my-plan.vue')
                },
                {
                   path:'appointment',
                   name:'client-appointment',
-                  component: ()=>import(/*webpackChunkName:"Notifications"*/'../views/Client/client-appointments.vue')
+                  component: ()=>import('../views/Client/client-appointments.vue')
                },
                {
                   path:'profile',
                   name:'client-profile',
-                  component: ()=>import(/*webpackChunkName:"Profile"*/'../views/Client/client-profile.vue'),
+                  component: ()=>import('../views/Client/client-profile.vue'),
                   props:(route)=>{
                      const id=Number(route.params.id)
                      return isNaN(id) ? {id:1}:{id:id}
@@ -68,7 +68,7 @@ const routes = [
       {
          path: '/technician/:id',
          name:'technician',
-         component: ()=>import(/*webpackChunkName:"ClientLayout"*/'../components/technician/Layout/TechnicianLayout.vue'),
+         component: ()=>import('../components/technician/Layout/TechnicianLayout.vue'),
             children:[
               {
                 path:'',
@@ -77,7 +77,7 @@ const routes = [
                {
                  path:'profile',
                  name:'technician-profile',
-                 component: ()=>import(/*webpackChunkName:"Profile"*/'../views/technician/technician-profile.vue'),
+                 component: ()=>import('../views/technician/technician-profile.vue'),
                  props:(route)=>{
                    const id=Number(route.params.id)
                    return isNaN(id) ? {id:1}:{id:id}
@@ -86,12 +86,12 @@ const routes = [
                {
                   path:'myreports',
                   name:'myreports',
-                  component: ()=>import(/*webpackChunkName:"MyReports"*/'../views/technician/technician-my-reports.vue')
+                  component: ()=>import('../views/technician/technician-my-reports.vue')
                },
                {
                  path:'myroutes',
                  name:'myroutes',
-                 component: ()=>import(/*webpackChunkName:"MyRoutes"*/'../views/technician/technician-my-routes.vue')
+                 component: ()=>import('../views/technician/technician-my-routes.vue')
                },
             ]
       },
