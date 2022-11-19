@@ -51,7 +51,6 @@ export default {
 
             new usersServices().login(this.email,this.password)
             .then(response=>{
-                console.log("USER LOGIN CORRECTLY")
                 sessionStorage.setItem("jwt",response.data.accessToken)
 
                 const typeUser=response.data.user.type
