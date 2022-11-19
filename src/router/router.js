@@ -5,8 +5,6 @@ import Register from '../views/shared/general-register.vue'
 import RegisterClient from '../components/client/General/client-register.vue'
 import RegisterTechnician from '../components/technician/General/technician-register.vue'
 
-//TODO:Solo cargaremos de primeras las vistas principales que se le muestren al principio al cliente (Login and Register), el resto será cargando mediante Lazy Load (carga perezosa) para que la aplicación descargue los componentes de acuerdo a lo que demande el cliente
-
 const routes = [
     { 
         path: '/',
