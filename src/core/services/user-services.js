@@ -1,8 +1,7 @@
 import axios from 'axios'
 
 const httpSignal=axios.create(
-  {baseURL:"https://localhost:44306/api/"})
-
+  {baseURL:"https://repairnow.azurewebsites.net/api/"})
 
 export class usersServices {
 
@@ -16,7 +15,7 @@ export class usersServices {
   }
 
   register = (email,password,firstName,lastName,address,phone,type,plan) => {
-    return axios.post("https://localhost:44306/api/users/Signup",{
+    return axios.post("https://repairnow.azurewebsites.net/api/users/Signup",{
       email,
       password,
       firstName,
@@ -29,7 +28,7 @@ export class usersServices {
   }
 
   login = (email,password) =>{
-    return axios.post("https://localhost:44306/api/users/Login",
+    return axios.post("https://repairnow.azurewebsites.net/api/users/Login",
       {
         email,
         password

@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const httpSignal=axios.create(
     {
-    baseURL:"https://localhost:44306/api/",
+    baseURL:"https://repairnow.azurewebsites.net/api/",
     headers:{
       "Authorization": "Bearer "+ sessionStorage.getItem("jwt")
     }
@@ -19,7 +19,7 @@ export class appliancesServices {
     }
 
     postNewAppliance=(name,description,brand,model,year,urlImage,insuranceDate,clientId)=>{
-      return axios.post('https://localhost:44306/api/appliances',{
+      return axios.post('https://repairnow.azurewebsites.net/api/appliances',{
         name,
         description,
         brand,
@@ -32,7 +32,7 @@ export class appliancesServices {
     }
 
     patchAppliance=(id,name,description,brand,model,year,urlImage,insuranceDate)=>{
-      return axios.patch('https://localhost:44306/api/appliances/'+id.toString(),{
+      return axios.patch('https://repairnow.azurewebsites.net/api/appliances/'+id.toString(),{
         name,
         description,
         brand,
