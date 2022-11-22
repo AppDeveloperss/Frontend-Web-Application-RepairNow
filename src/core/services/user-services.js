@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const httpSignal=axios.create(
-  {baseURL:"http://localhost:3000/660/"})
+  {baseURL:"https://localhost:44306/api/"})
 
 
 export class usersServices {
@@ -16,7 +16,7 @@ export class usersServices {
   }
 
   register = (email,password,firstName,lastName,address,phone,type,plan) => {
-    return axios.post("http://localhost:3000/register",{
+    return axios.post("https://localhost:44306/api/users/Signup",{
       email,
       password,
       firstName,
@@ -29,7 +29,7 @@ export class usersServices {
   }
 
   login = (email,password) =>{
-    return axios.post("http://localhost:3000/login",
+    return axios.post("https://localhost:44306/api/users/Login",
       {
         email,
         password

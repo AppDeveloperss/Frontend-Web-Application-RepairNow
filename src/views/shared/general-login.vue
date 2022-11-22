@@ -51,14 +51,16 @@ export default {
 
             new usersServices().login(this.email,this.password)
             .then(response=>{
-                sessionStorage.setItem("jwt",response.data.accessToken)
+                sessionStorage.setItem("jwt",response.data.token)
 
-                const typeUser=response.data.user.type
+                const typeUser=response.data.type
 
                 if(typeUser=="technician"){
-                    this.$router.push('/technician/'+response.data.user.id);
+                  //response.data.user.id
+                    this.$router.push('/technician/'+response.data.id);
                 }else{
-                    this.$router.push('/client/'+response.data.user.id);
+                  //response.data.user.id
+                    this.$router.push('/client/'+response.data.id);
                 }
 
             })

@@ -3,17 +3,17 @@ import axios from 'axios'
 export class appointmentsServices {
 
   getAppointmentsInformation=()=>{
-    return axios.get('http://localhost:3000/660/appointments',
+    return axios.get('https://localhost:44306/api/appointments',
       {headers:{"Authorization": "Bearer "+ sessionStorage.getItem("jwt")}})
   }
 
   getAppointmentWithId=(id)=>{
-    return axios.get('http://localhost:3000/660/appointments/'+id,
+    return axios.get('https://localhost:44306/api/appointments/'+id,
       {headers:{"Authorization": "Bearer "+ sessionStorage.getItem("jwt")}})
   }
 
   postNewAppointment=(dateReserve,dateAttention,hour,clientId,applianceModelId)=>{
-    return axios.post('http://localhost:3000/660/appointments',{
+    return axios.post('https://localhost:44306/api/appointments',{
       dateReserve,
       dateAttention,
       hour,
@@ -23,7 +23,7 @@ export class appointmentsServices {
   }
 
   modifyAppointment(id,dateReserve,dateAttention,hour){
-    return axios.patch('http://localhost:3000/660/appointments/'+id,
+    return axios.patch('https://localhost:44306/api/appointments/'+id,
       {
         dateReserve,
         dateAttention,

@@ -3,7 +3,7 @@ import axios from 'axios'
 export class ModifiedUserServices{
 
   modifyUser(id,firstName,lastName,address,phone,email,password){
-    return axios.patch('http://localhost:3000/660/users/'+id,
+    return axios.patch('https://localhost:44306/api/users/'+id,
       {
         firstName,
         lastName,
